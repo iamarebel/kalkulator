@@ -1,0 +1,31 @@
+1. nadajemy id dla elementow kalkulatorow
+a)first-input
+b) second-input
+c) addition
+d) subtraction
+e) multiplication
+f) division
+g)equals
+h)result
+
+2. dla id przypisanych operacjom matematycznym dodaj addeventlistener ktory nasluchuje na klikanie a podczas klikniecia :
+0 - dodajemy styl dla klasy activ w css
+a) jelsi ktoras z innych przyciskow ma klase active to usun (toggle lub if)
+b)doda klase active do klinietego elementu
+
+
+3. dla id equals   dodaj addevent listnere ktory nasluchuje na klikniecie a w 
+momencie klinkieciea wywoluje funkcje: 
+a) wywola funkcje ktora pobierze elelemnt z klasa active (tylko jedna)
+b) cztery if'y ktore opisza wszystkie operacje matematyczne jest active jest addition to rob to i to 
+let addition = document.querySelector(".active");
+
+if (active Elelement === addition) {
+  jesli wybrany element ma id addition to znajdz
+  first-input i second-input, pobierz ich wartosci , zsumuj je a nastepnie 
+  znajdz pole o id result i przypisz mu wynik dzialania
+
+}
+
+sterowanie klawiatura- tab 
+historia operacji
