@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
   <title>Kalkulator</title>
 </head>
 <body>
   <!-- wybranie rodzaju inputu tutaj number czyli tylko liczby , pjoawia sie pole do wpisania inputu -->
   <input  id = "first-input" type="number"/>
   <input id = "second-input" type="number"/>
-  <button id="addition">+</button>
-  <button id="subtraction">-</button>
-  <button id="multiplication">*</button>
-  <button>/</button>
-  <button>=</button>
-  <input id = "input Three" type="number"  readonly />
+    <button id="addition" class="active">+</button>
+    <button id="subtraction">-</button>
+    <button id="multiplication">*</button>
+    <button id="division">/</button>
+    <button id="equals">=</button>
+  <input id = "result" type="number" readonly />
 </body>
-</html>
+</html> 
