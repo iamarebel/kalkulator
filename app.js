@@ -3,7 +3,7 @@
 let firstInput = document.querySelector("#first-input");
 let secondInput = document.querySelector("#second-input");
 let addition = document.querySelector("#addition");
-let subtraction = document.querySelector("#subtraction");
+let substraction = document.querySelector("#subtraction");
 let multiplication = document.querySelector("#multiplication");
 let division = document.querySelector("#division");
 let equals = document.querySelector("#equals");
@@ -28,13 +28,35 @@ let handleClick = (event) => {
 
 // nasluchujemy na klikniecia i wywolujemy addActiveClass aby nadac klase aktywna na klikniety element
 addition.addEventListener("click", handleClick);
-subtraction.addEventListener("click", handleClick);
+substraction.addEventListener("click", handleClick);
 multiplication.addEventListener("click", handleClick);
 division.addEventListener("click", handleClick);
 
-let getActiveElement = () => {
-  handleClick();
+let handleOperation = () => {
+  let activeOperation = document.querySelector(".active");
+  result.value = "";  // czyszczenie  pola zeby stare wyniki nie zsotaly
+
+
+  if (activeOperation === addition) {
+    result.value = firstInput.valueAsNumber + secondInput.valueAsNumber;
+  }
+
+  else if (activeOperation === substraction) {
+    result.value = firstInput.valueAsNumber - secondInput.valueAsNumber;
+  }
+
+  else if (activeOperation === multiplication) {
+    result.value = firstInput.valueAsNumber * secondInput.valueAsNumber;
+  }
+
+  else if (activeOperation == division) {
+    if(secondInput.valueAsNumber !== 0)
+    result.value = firstInput.valueAsNumber / secondInput.valueAsNumber;
+  }
 
 }
 
-equals.addEventListener("click", getActiveElement);
+// let wartoscJeden = firstInput.value;
+
+equals.addEventListener("click", handleOperation);
+

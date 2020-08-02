@@ -15,8 +15,7 @@ b)doda klase active do klinietego elementu / DONE
 
 
 3. dla id equals   dodaj addevent listnere ktory nasluchuje 
-na klikniecie a w 
-momencie klinkieciea wywoluje funkcje: 
+na klikniecie a w  momencie klinkieciea wywoluje funkcje: / done
 a) wywola funkcje ktora pobierze elelemnt z klasa active
  (tylko jedna)
 b) cztery if'y ktore opisza wszystkie operacje matematyczne jest active jest addition to rob to i to 
@@ -28,6 +27,9 @@ if (active Ellement === addition) {
   znajdz pole o id result i przypisz mu wynik dzialania
 
 }
+wyciagniecie queryselektora input
+result.value = 12345;
 
 sterowanie klawiatura- tab 
 historia operacji
+
