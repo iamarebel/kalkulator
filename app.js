@@ -20,12 +20,18 @@ let removeActiveClass = () => {
   }
 }
 
+let readOnly = () => {
+  secondInput.value = "";
+  secondInput.setAttribute("readonly", "");
+}
+
 //dodajemy event na target (uniwersalny) ktory bedize czekal az
 // cos sie stnaie i doda klase active wtedy, w devtoolsach po wywolaniu eventow pokazuje target  w wlasciwosciach
 let handleClick = (event) => {
+  secondInput.removeAttribute("readonly", "");
   removeActiveClass();
-  event.target.classList.add("active"); // dodawanie klasy active - po nazwie klasy
-// console.log(event);
+  event.target.classList.add("active");
+   // dodawanie klasy active - po nazwie klasy
 }
 
 // nasluchujemy na klikniecia i wywolujemy addActiveClass aby nadac klase aktywna na klikniety element
@@ -34,6 +40,7 @@ substraction.addEventListener("click", handleClick);
 multiplication.addEventListener("click", handleClick);
 division.addEventListener("click", handleClick);
 factorial.addEventListener("click", handleClick);
+factorial.addEventListener("click", readOnly);
 fibonacci.addEventListener("click", handleClick);
 
 // funkcja sprawdzająca silnie
@@ -66,7 +73,10 @@ let handleOperation = () => {
   }
 
   else if (activeOperation === division) {
-    if(secondInput.valueAsNumber !== 0)
+    if (secondInput.valueAsNumber === 0) {
+      alert("you can't divide by 0!");
+    }
+    else if(secondInput.valueAsNumber !== 0)
     result.value = firstInput.valueAsNumber / secondInput.valueAsNumber;
   }
 
