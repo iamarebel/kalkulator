@@ -10,6 +10,11 @@ input {
   height: 50px;
   border: 2px dashed rgb(65, 60, 60);
   font-size: 20px;
+  margin: 0 5px;
+}
+
+input:read-only {
+  background-color: lightgray;
 }
 
 button {
@@ -20,8 +25,13 @@ button {
   border-radius: 15px;
   border: 2px solid black; 
   outline: none;
+  cursor: pointer;animation: myMove 2s linear 0s infinite normal;
 }
 
 .active {
+  background-color: rgb(132, 216, 36);
+}
+
+.equals-style {
   background-color: rgb(132, 216, 36);
 }
