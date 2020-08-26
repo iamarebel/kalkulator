@@ -1,5 +1,5 @@
 
-// deklaracja zmiennych wszystkich elelementów
+// deklaracja zmiennych wszystkich elementów
 let firstInput = document.querySelector("#first-input");
 let secondInput = document.querySelector("#second-input");
 let addition = document.querySelector("#addition");
@@ -36,24 +36,22 @@ division.addEventListener("click", handleClick);
 factorial.addEventListener("click", handleClick);
 fibonacci.addEventListener("click", handleClick);
 
-
-let factorialFunction = () => {
-  let number = firstInput.valueAsNumber;
-  if (number === 1 || number === 0) {
-    result.value = 1;
+// funkcja sprawdzająca silnie
+let factorialFunction = (n) => {
+  if (n === 1 || n === 0) {
+    return 1;
   } 
-  else if  (number < 0) {
+  else if  (n < 0) {
     alert("the number needs to be a positive number");
   }
-  // funcja dziala aż do else, wpisanie wyższej liczby niż 1 w firstInput skutkuje Uncaught RangeError: Maximum call stack size exceeded
   else {
-    return result.value = number * factorialFunction(number - 1);
+    return n*factorialFunction(n-1);
   }
 }
 
 let handleOperation = () => {
   let activeOperation = document.querySelector(".active");
-  result.value = "";  // czyszczenie  pola zeby stare wyniki nie zsotaly
+  result.value = "";  // czyszczenie  pola zeby stare wyniki nie zostały
 
   if (activeOperation === addition) {
     result.value = firstInput.valueAsNumber + secondInput.valueAsNumber;
@@ -73,7 +71,8 @@ let handleOperation = () => {
   }
 
   else if (activeOperation === factorial) {
-    factorialFunction();
+    let answer = factorialFunction(firstInput.valueAsNumber);  // definicja zmiennej answer to funkcja silnii pobierajaca atrubut z firstIpnut w postaci number
+    result.value = answer;  // przypisanie mziennej answer do pola result
   }
 }
 
